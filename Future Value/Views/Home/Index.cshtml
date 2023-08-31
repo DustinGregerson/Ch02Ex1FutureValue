@@ -19,6 +19,18 @@
     --modified index html
 
 -->
+<!--
+    Dustin Gregerson
+    date 8/30/2023
+    --Modified Home Controler
+        :modified the Home Controler to check for invalid input from the model
+        then display the a error message for were the error occured and what type of error it was
+    --Modified FutureValueModel
+        :added error messages for rang values and number formate exsceptions
+    --Modified Index html
+        :to display messages for invalid inputs
+
+-->
 @model FutureValueModel
 @{
     ViewBag.Title = "Future Value Calculator";
@@ -33,6 +45,7 @@
     <body>
         <h1> Future Value Calculator</h1>
         <form asp-action="Index" method="post">
+            <div asp-validation-summary="All"></div>
             <div>
                 <label asp-for="MonthlyInvestment">Monthly Investment:</label>
                 <input asp-for="MonthlyInvestment" />
